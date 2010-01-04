@@ -7,3 +7,7 @@ set :haml, {:format => :html5, :attr_wrapper => '"'}
 get '/' do
   haml :index
 end
+
+post '/' do
+  haml :index
+end

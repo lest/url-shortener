@@ -1,1 +1,3 @@
-Hello world!
+%form{:action => '/', :method => :post}
+  %input{:type => :text, :name => :url, :value => params[:url]}
+  %input{:type => :submit, :value => 'Shorten'}
