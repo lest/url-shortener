@@ -16,10 +16,6 @@ class Link
   timestamps :at
 
   validates_format :url, :as => :url
-
-  def shorted
-    id.base62_encode if id
-  end
 end
 
 helpers do
@@ -28,7 +24,7 @@ helpers do
   alias :h :escape_html
 
   def link_url(link)
-    "http://#{request.host}/#{link.shorted}"
+    "http://#{request.host}/#{link.id.base62_encode}"
   end
 end
 
