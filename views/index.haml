@@ -1,3 +1,13 @@
+%h1 Shorten your long URL
 %form{:action => '/', :method => :post}
-  %input{:type => :text, :name => :url, :value => params[:url]}
+  %input{:type => :text, :size => 40, :name => :url, :value => @link.url || 'http://'}
   %input{:type => :submit, :value => 'Shorten'}
+  - if @link.errors[:url].any?
+    .error=h 'may be some error in your url?'
+- if @link.saved?
+  %dl
+    %dt Original:
+    %dd=h @link.url
+    %dt Shorted:
+    %dd
+      %a{:href => link_url(@link)}=h link_url(@link)
