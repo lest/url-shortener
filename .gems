@@ -1,0 +1,6 @@
+sinatra --version 0.9.4
+haml --version 2.2.16
+dm-core --version 0.10.2
+dm-validations --version 0.10.2
+dm-timestamps --version 0.10.2
+base62 --version 0.1.0
