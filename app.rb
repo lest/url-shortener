@@ -12,7 +12,7 @@ class Link
   include DataMapper::Resource
 
   property :id, Serial
-  property :url, String, :required => true, :length => 255
+  property :url, String, :length => 255, :required => true, :index => true
   timestamps :at
 
   validates_format :url, :as => :url
